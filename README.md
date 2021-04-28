@@ -1,2 +1,80 @@
-# learn-githum-2021
-Git/githubの使い方を学ぶためのリポジトリ
+# learn-github-2021
+
+## 演習
+### 1. `KatLab-MiyazakiUniv/learn-github-2021`を`fork`する
+<img src="img/Fork1.PNG" width=80%>
+<img src="img/Fork2.PNG" width=80%>
+
+### 2. `fork`した自分のリポジトリをクローンする
+```
+$ git clole https://github.com/[githubユーザ名]/learn-github-2021.git
+```
+### 3. `upstream`を登録する
+`upstream`として親リポジトリを登録する(`upstream`は後述する最新の状態の取得で使用する)
+```
+$ cd learn-github-2021
+$ git remote add upstream https://github.com/KatLab-MiyazakiUniv/learn-github-2021.git
+```
+
+### 4. ローカルリポジトリで作業する
+#### 4.1. 作業用ブランチを切る
+ブランチを確認すると，現在`main`ブランチにいることが分かる
+```
+$ cd learn-github-2021/[自分の名前のディレクトリ]
+$ git branch
+* main
+```
+`git checkout -b`で作業用ブランチを作成して移動する  
+`git branch`コマンドで確認した時に，新しく作ったブランチに`*`が付いていればOK
+```
+$ git checkout -b exercise-[自分の名前]
+$ git branch
+  main
+* exercise-[自分の名前]
+```
+※`git checkout`はブランチを移動するコマンドで，オプションに`-b`をつけることで新たにブランチを作成して移動する
+#### 4.2. 列挙体の課題ファイルをディレクトリ下に新たに追加して，`.gitkeep`を削除する
+課題ファイルの名前は`Direction.cpp`にしてください
+#### 4.3. 編集内容をコミットする
+まず．`git status`で，編集したファイル(追加・削除も含む)が赤く表示されていることを確認する
+```
+$ git status
+//編集内容が表示される
+```
+編集内容をインデックスに追加する  
+この時，`git status`で確認すると，先程の赤い表示の箇所が緑になっている
+```
+$ git add [課題ファイル].cpp .gitkeep
+$ git status
+//編集内容が表示される
+```
+インデックスの内容をローカルリポジトリにコミットする
+```
+$ git commit -m "編集内容の簡潔な説明"
+```
+#### 4.4. 自分のリモートリポジトリ(origin)に`push`する
+```
+$ git push origin exercise-[自分の名前]
+```
+
+### 5. KatLabのリポジトリにプルリクを出す
+githubで自分のリポジトリを開いて以下の手順で操作する
+#### ①`Compare & pull request`をクリック
+#### ②プルリクのタイトルと内容を記述する
+#### ③レビューしてほしい人を選択する
+#### ③`Create pull request`をクリック
+
+<img src="img/PullRequest1.PNG" width=80%>
+<img src="img/PullRequest2.PNG" width=80%>
+
+### 6. レビューを受けて修正する
+`Request change`があれば修正し，レビュワー全員から`Approve`をもらったらマージする
+
+### 7. ローカルリポジトリの`main`ブランチを最新の状態に更新する
+`git pull`コマンドを使って，親リポジトリ(`upstream`)から最新の状態を取得する
+```
+$ git checkout main
+$ git pull upstream main
+```
+
+`main`ブランチを更新出来たら，新たにブランチを切って次の作業を進める(演習はここまで)
