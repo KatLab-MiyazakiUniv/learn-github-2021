@@ -17,7 +17,10 @@ $ git remote add upstream https://github.com/KatLab-MiyazakiUniv/learn-github-20
 ```
 
 ### 4. ローカルリポジトリで作業する
-#### 4.1. 作業用ブランチを切る
+#### 4.1. githubで`issue`を建てる
+githubの`issues`タブにある`New issue`をクリックして`issue`を建てる  
+タイトルを「課題提出([自分の名前])」，コメントを「列挙体の課題を提出する」とする
+#### 4.2. 作業用ブランチを切る
 ブランチを確認すると，現在`main`ブランチにいることが分かる
 ```
 $ cd learn-github-2021/[自分の名前のディレクトリ]
@@ -33,9 +36,9 @@ $ git branch
 * exercise-[自分の名前]
 ```
 ※`git checkout`はブランチを移動するコマンドで，オプションに`-b`をつけることで新たにブランチを作成して移動する
-#### 4.2. 列挙体の課題ファイルをディレクトリ下に新たに追加して，`.gitkeep`を削除する
+#### 4.3. 列挙体の課題ファイルをディレクトリ下に新たに追加して，`.gitkeep`を削除する
 課題ファイルの名前は`Direction.cpp`にしてください
-#### 4.3. 編集内容をコミットする
+#### 4.4. 編集内容をコミットする
 まず．`git status`で，編集したファイル(追加・削除も含む)が赤く表示されていることを確認する
 ```
 $ git status
@@ -52,7 +55,7 @@ $ git status
 ```
 $ git commit -m "編集内容の簡潔な説明"
 ```
-#### 4.4. 自分のリモートリポジトリ(origin)に`push`する
+#### 4.5. 自分のリモートリポジトリ(origin)に`push`する
 ```
 $ git push origin exercise-[自分の名前]
 ```
@@ -63,6 +66,7 @@ githubで自分のリポジトリを開いて以下の手順で操作する
 #### ②プルリクのタイトルと内容を記述する
 #### ③レビューしてほしい人を選択する
 #### ③`Create pull request`をクリック
+※プルリクのタイトルは`close #issue番号 [プルリクの説明]`とすると，該当issueと自動で紐づけられる
 
 <img src="img/PullRequest1.PNG" width=80%>
 <img src="img/PullRequest2.PNG" width=80%>
