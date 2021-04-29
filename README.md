@@ -8,7 +8,7 @@
 
 ### 2. `fork`した自分のリポジトリをクローンする
 ```
-$ git clole https://github.com/[githubユーザ名]/learn-github-2021.git
+$ git clone https://github.com/[githubユーザ名]/learn-github-2021.git
 ```
 ### 3. `upstream`を登録する
 `upstream`として親リポジトリを登録する(`upstream`は後述する最新の状態の取得で使用する)
@@ -20,11 +20,12 @@ $ git remote add upstream https://github.com/KatLab-MiyazakiUniv/learn-github-20
 ### 4. ローカルリポジトリで作業する
 #### 4.1. githubで`issue`を建てる
 githubの`issues`タブにある`New issue`をクリックして`issue`を建てる  
-タイトルを「課題提出([自分の名前])」，コメントを「列挙体の課題を提出する」とする
+タイトルを「課題提出([自分の名前])」にして，コメントは下図のように記述する
+<img src="img/Issue.PNG" width=80%>
 #### 4.2. 作業用ブランチを切る
 ブランチを確認すると，現在`main`ブランチにいることが分かる
 ```
-$ cd learn-github-2021/[自分の名前のディレクトリ]
+$ cd learn-github-2021/[自分の名前のディレクトリ
 $ git branch
 * main
 ```
