@@ -1,6 +1,7 @@
 # learn-github-2021
 
 ## 演習
+※以下で[~]のように説明しているところでは，入力する際は[]は含めない
 ### 1. `KatLab-MiyazakiUniv/learn-github-2021`を`fork`する
 <img src="img/Fork1.PNG" width=80%>
 <img src="img/Fork2.PNG" width=80%>
@@ -30,10 +31,10 @@ $ git branch
 `git checkout -b`で作業用ブランチを作成して移動する  
 `git branch`コマンドで確認した時に，新しく作ったブランチに`*`が付いていればOK
 ```
-$ git checkout -b exercise-[自分の名前]
+$ git checkout -b ticket-[issue番号]
 $ git branch
   main
-* exercise-[自分の名前]
+* ticket-[issue番号]
 ```
 ※`git checkout`はブランチを移動するコマンドで，オプションに`-b`をつけることで新たにブランチを作成して移動する
 #### 4.3. 列挙体の課題ファイルをディレクトリ下に新たに追加して，`.gitkeep`を削除する
@@ -47,7 +48,7 @@ $ git status
 編集内容をインデックスに追加する  
 この時，`git status`で確認すると，先程の赤い表示の箇所が緑になっている
 ```
-$ git add [課題ファイル].cpp .gitkeep
+$ git add Direction.cpp .gitkeep
 $ git status
 //編集内容が表示される
 ```
@@ -57,7 +58,7 @@ $ git commit -m "編集内容の簡潔な説明"
 ```
 #### 4.5. 自分のリモートリポジトリ(origin)に`push`する
 ```
-$ git push origin exercise-[自分の名前]
+$ git push origin ticket-[issue番号]
 ```
 
 ### 5. KatLabのリポジトリにプルリクを出す
@@ -66,7 +67,7 @@ githubで自分のリポジトリを開いて以下の手順で操作する
 #### ②プルリクのタイトルと内容を記述する
 #### ③レビューしてほしい人を選択する
 #### ③`Create pull request`をクリック
-※プルリクのタイトルは`close #issue番号 [プルリクの説明]`とすると，該当issueと自動で紐づけられる
+※プルリクのタイトルは`close #[issue番号] [プルリクの説明]`とすると，該当issueと自動で紐づけられる
 
 <img src="img/PullRequest1.PNG" width=80%>
 <img src="img/PullRequest2.PNG" width=80%>
