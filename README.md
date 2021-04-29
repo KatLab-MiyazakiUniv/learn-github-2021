@@ -29,15 +29,15 @@ $ cd learn-github-2021/[自分の名前のディレクトリ
 $ git branch
 * main
 ```
-`git checkout -b`で作業用ブランチを作成して移動する  
+`git switch -c`で作業用ブランチを作成して移動する  
 `git branch`コマンドで確認した時に，新しく作ったブランチに`*`が付いていればOK
 ```
-$ git checkout -b ticket-[issue番号]
+$ git switch -c ticket-[issue番号]
 $ git branch
   main
 * ticket-[issue番号]
 ```
-※`git checkout`はブランチを移動するコマンドで，オプションに`-b`をつけることで新たにブランチを作成して移動する
+※`git switch`はブランチを移動するコマンドで，オプションに`-c`をつけることで新たにブランチを作成して移動する
 #### 4.3. 列挙体の課題ファイルをディレクトリ下に新たに追加して，`.gitkeep`を削除する
 課題ファイルの名前は`Direction.cpp`にしてください
 #### 4.4. 編集内容をコミットする
@@ -79,7 +79,7 @@ githubで自分のリポジトリを開いて以下の手順で操作する
 ### 7. ローカルリポジトリの`main`ブランチを最新の状態に更新する
 `git pull`コマンドを使って，親リポジトリ(`upstream`)から最新の状態を取得する
 ```
-$ git checkout main
+$ git switch main
 $ git pull upstream main
 ```
 
