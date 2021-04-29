@@ -25,7 +25,7 @@ githubの`issues`タブにある`New issue`をクリックして`issue`を建て
 #### 4.2. 作業用ブランチを切る
 ブランチを確認すると，現在`main`ブランチにいることが分かる
 ```
-$ cd learn-github-2021/[自分の名前のディレクトリ
+$ cd learn-github-2021/[自分の名前のディレクトリ]
 $ git branch
 * main
 ```
