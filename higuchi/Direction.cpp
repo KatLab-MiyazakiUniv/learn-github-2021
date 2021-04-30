@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-enum class Direction{N,NE,E,SE,S,SW,W,NW};
+enum class Direction{N,NE,E,SE,S,SW,W,NW,NON};
 
 struct Coordinate {
  int x;
@@ -39,33 +39,36 @@ _x = future.x - now.x; //_x > 0　右　、　_x < 0 　左
 _y = future.y - now.y; //_y > 0 下　、　_y < 0 上
 
 
-if(_x > 0){     //右側
-    if(_y == 0){
-            return Direction::E;
+    if(_x > 0){     //右側
+        if(_y == 0){
+                return Direction::E;
         }else if(_y > 0){
-            return Direction::SE;
+                return Direction::SE;
         }else if(_y < 0){
-            return Direction::NE;
+                return Direction::NE;
         }
     }
 
-if(_x < 0){   //左
-    if(_y == 0){
-            return Direction::W;
+    if(_x < 0){   //左
+        if(_y == 0){
+                return Direction::W;
         }else if(_y > 0){
-            return Direction::SW;
+                return Direction::SW;
         }else if(_y < 0){
-            return Direction::NW;
+                return Direction::NW;
         }
     }
 
-if(_x == 0){
+    if(_x == 0){
 
-    if(_y > 0){
-            return Direction::S;
+        if(_y > 0){
+                return Direction::S;
         }else if(_y < 0){
-            return Direction::N;
+                return Direction::N;
+        }else if(_y == 0){
+                return Direction::NON;
         }
-    }
+    } 
         
+
 }
