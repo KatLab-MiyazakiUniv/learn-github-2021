@@ -8,23 +8,25 @@ struct Coordinate{
     int y;
 };
 
-Direction calcNextDirection1(Coordinate, Coordinate);
-Direction calcNextDirection2(Coordinate, Coordinate);
-Direction calcNextDirection3(Coordinate, Coordinate);
+Direction calcNextDirection1(Coordinate&, Coordinate&);
+Direction calcNextDirection2(Coordinate&, Coordinate&);
+Direction calcNextDirection3(Coordinate&, Coordinate&);
 
 int main(void){
     Coordinate now = {0,0};
     Coordinate next = {1,1};
+    Coordinate & refNow = now;
+    Coordinate & refNext = next;
 
-    printf("f1 => %d\n",(int)calcNextDirection1(now, next));
-    printf("f2 => %d\n",(int)calcNextDirection2(now, next));
-    printf("f3 => %d\n",(int)calcNextDirection3(now, next));
+    printf("f1 => %d\n",(int)calcNextDirection1(refNow, refNext));
+    printf("f2 => %d\n",(int)calcNextDirection2(refNow, refNext));
+    printf("f3 => %d\n",(int)calcNextDirection3(refNow, refNext));
 
     return 0;
 }
 
 // if
-Direction calcNextDirection1(Coordinate now, Coordinate next){
+Direction calcNextDirection1(Coordinate& now, Coordinate& next){
     int dy = next.y - now.y;
     int dx = next.x - now.x;
     if(dy<0){
@@ -42,14 +44,14 @@ Direction calcNextDirection1(Coordinate now, Coordinate next){
 }
 
 // int->enum
-Direction calcNextDirection2(Coordinate now, Coordinate next){
+Direction calcNextDirection2(Coordinate& now, Coordinate& next){
     int result = 3;
     return (Direction)result;
     //return static_cast<Direction>(result);  // こっちのキャストが推奨される
 }
 
 // string->enum
-Direction calcNextDirection3(Coordinate now, Coordinate next){
+Direction calcNextDirection3(Coordinate& now, Coordinate& next){
     std::string dir = "";
     int dy = next.y - now.y;
     int dx = next.x - now.x;
