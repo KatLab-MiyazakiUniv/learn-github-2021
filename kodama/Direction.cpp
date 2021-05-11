@@ -1,7 +1,7 @@
 /**
 * @file Direction.cpp
 * @brief 進行方向を求める
-* @author 児玉 github名
+* @author kodama0720
 */
 
 #include <stdio.h>
